@@ -13,7 +13,6 @@ from shellexecute import execute
 rtn = execute(
     f"echo HI",
     send_confirmation=[("HI", "y")],
-    outstream=fake_stream,
 )
 ```
 
