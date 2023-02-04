@@ -47,11 +47,11 @@ def execute(
             check=not ignore_errors,
             timeout=timeout,
             encoding=encoding,
-            stdout=outstream or sys.stdout,
         )
         return completed_process.returncode
-    outstream = outstream or sys.stdout
+    # temporary buffer for stderr
     child = spawn(command, cwd=cwd, encoding=encoding, timeout=timeout)
+    child.logfile = outstream or sys.stdout
     eof_reached = False
     for expect, answer in send_confirmation:
         which = child.expect_exact([expect, EOF], timeout=timeout)
