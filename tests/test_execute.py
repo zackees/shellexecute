@@ -7,12 +7,10 @@ import os
 import sys
 from threading import Thread, Event
 
-
-from execute import execute
+from shellexecute import execute
 
 HERE = os.path.abspath(os.path.dirname(__file__))
 ACCEPT_PY = os.path.join(HERE, "accept.py")
-
 
 
 class FakeStream:
@@ -43,6 +41,7 @@ class ExecuteTester(unittest.TestCase):
             if not event.wait(5):
                 print("ERROR TIMEOUT")
                 os.kill(os.getpid(), 9)
+
         Thread(target=kill, daemon=True).start()
         fake_stream = FakeStream()
 
