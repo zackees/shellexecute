@@ -7,7 +7,7 @@ import re
 
 import setuptools
 
-URL = "https://github.com/zackees/execute"
+URL = "https://github.com/zackees/shellexecute"
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
