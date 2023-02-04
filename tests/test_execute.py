@@ -50,6 +50,7 @@ class ExecuteTester(unittest.TestCase):
             f"python {ACCEPT_PY}",
             send_confirmation=[("Accept? (y/n): ", "y")],
             timeout=5,
+            outstream=fake_stream,
         )
         event.set()
         if sys.platform != "win32":
