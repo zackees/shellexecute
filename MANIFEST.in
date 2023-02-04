@@ -1,0 +1,2 @@
+include pyproject.toml
+include requirements.testing.txt

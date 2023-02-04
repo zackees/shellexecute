@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "execute"
+description = "Executes a command, allows confirmation to be sent using p/wexpect"
+readme = "README.md"
+requires-python = ">=3.7"
+keywords = ["template-python-cmd"]
+license = { text = "BSD 3-Clause License" }
+classifiers = ["Programming Language :: Python :: 3"]
+dependencies = [
+    "colorama",
+    "pexpect; sys_platform != 'win32'",
+    "pywin32; sys_platform == 'win32'",
+    "wexpect; sys_platform == 'win32'",
+]
+# Change this with the version number bump.
+# Also make the change in zcmds/version.py
+version = "1.0.0"
+
+[tool.mypy]
+ignore_missing_imports = true
