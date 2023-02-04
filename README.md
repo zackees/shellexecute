@@ -7,6 +7,17 @@ A template for quickly making a python lib that has a command line program attac
 [![Ubuntu_Tests](../../actions/workflows/push_ubuntu.yml/badge.svg)](../../actions/workflows/push_ubuntu.yml)
 [![Win_Tests](../../actions/workflows/push_win.yml/badge.svg)](../../actions/workflows/push_win.yml)
 
+`pip install shellexecute`
+
+```python
+from shellexecute import execute
+rtn = execute(
+    f"echo HI",
+    send_confirmation=[("HI", "y")],
+    outstream=fake_stream,
+)
+```
+
 Cross platform way to run shell commands using pexpect (wexpect on windows). VERY useful for installers where
 you want to automate accepting prompts.
 
