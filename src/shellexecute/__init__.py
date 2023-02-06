@@ -23,7 +23,7 @@ def execute(
     cwd=None,
     send_confirmation: Optional[list[tuple[str, str]]] = None,
     ignore_errors=False,
-    timeout=60 * 10,
+    timeout=None,
     encoding="utf-8",
     outstream=None,
 ) -> int:
