@@ -7,15 +7,16 @@ Shared utility functions
 import subprocess
 import sys
 from typing import Optional
-from colorama import just_fix_windows_console  # type: ignore
 
 if sys.platform == "win32":
     from wexpect import spawn, EOF  # type: ignore # pylint: disable=import-error
 else:
     from pexpect import spawn, EOF  # type: ignore # pylint: disable=import-error
 
+if sys.platform == "win32":
+    import colorama
 
-just_fix_windows_console()  # Fixes color breakages in win32
+    colorama.init()  # Fixes color breakages in win32
 
 
 def execute(
