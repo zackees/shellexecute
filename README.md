@@ -31,4 +31,5 @@ Run `./lint.sh` to find linting errors using `pylint`, `flake8` and `mypy`.
 
 
 # Versions
+  * 1.0.5: Fix coloram issue in non windows builds.
   * 1.0.4: Timeout is now set to None by default.
