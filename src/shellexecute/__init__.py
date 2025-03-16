@@ -67,5 +67,6 @@ def execute(
     else:
         child.wait()
     if child.exitstatus != 0 and not ignore_errors:
+        msg = "Command failed: " + command
         raise RuntimeError("Command failed: " + command)
     return child.exitstatus
